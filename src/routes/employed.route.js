@@ -3,11 +3,12 @@ import { deleteEmployed, getAllEmployed, getEmployed, patchEmployed, postEmploye
 
 const router = Router();
 
-router.route('/').get(getAllEmployed);
+router.route('/')
+    .get(getAllEmployed)
+    .post(postEmployed);
 
 router.route('/:employedId')
     .get(getEmployed)
-    .post(postEmployed)
     .patch(patchEmployed)
     .put(putEmployed)
     .delete(deleteEmployed);

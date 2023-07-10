@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node src/index.js",
     "dev": "NODE_OPTIONS='--experimental-specifier-resolution=node' nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -5,7 +5,7 @@ const PASSWORD_DB = process.env.PASSWORD_DB || 'root';
 const HOST_DB = process.env.HOST_DB || 'localhost';
 const PORT_DB = process.env.PORT_DB || '27017';
 const SRV_DB = null;
-const DATA_MONGO = process.env.PORT_DB || null;
+const DATA_MONGO = process.env.DATA_MONGO || null;
 
 const getConnectionString = () => {
     let response = `mongodb${SRV_DB ? '+srv' : ''}://`;

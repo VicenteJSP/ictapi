@@ -2,7 +2,7 @@ import employed from "../models/employed.model";
 import { validateAllProperties } from "../shared/validateEmployed";
 
 const getAllEmployeds = async () => {
-    return await employed.find();
+    return await employed.find({ active: true });
 };
 
 const getEmployedId = async (employedId) => {
@@ -16,7 +16,7 @@ const createEmployed = async (dataEmployed) => {
 };
 
 const updateEmployed = async (employedId, employedUpdate, isPatch = false) => {
-    if(!isPatch) validateAllProperties(employedUpdate);
+    if (!isPatch) validateAllProperties(employedUpdate);
     if (!await employed.exists({ _id: employedId })) throw new Error('Employed not found!');
     return await employed.findByIdAndUpdate({ _id: employedId }, employedUpdate, { new: true });
 };
